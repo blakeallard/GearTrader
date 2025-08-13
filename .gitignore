@@ -1,0 +1,4 @@
+guitar_env/
+*.pyc
+__pycache__/
+*.csv
