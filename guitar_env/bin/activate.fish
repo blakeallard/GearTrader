@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /mnt/c/Users/ekalb/Guitar_Tracker_Project/guitar-tracker/guitar_env
+set -gx VIRTUAL_ENV /mnt/c/Users/ekalb/Guitar_Tracker_Project/GearTrader/guitar_env
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH

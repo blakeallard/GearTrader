@@ -108,7 +108,7 @@ private:
 
     void countByPricesRanges()
     {
-        std::cout << "\n COUNTING GUITARS BY PRICE RANGES " << std::endl;
+        std::cout << "\nCOUNTING GUITARS BY PRICE RANGES " << std::endl;
 
         int under1000{};
         int between1000and2000{};
@@ -132,18 +132,19 @@ private:
             }
             else if (g.price < 4000)
             {
-                between3000and4000++;            }
+                between3000and4000++;            
+            }
             else 
             {
                 over4000++;            
             }
         } // end for()
 
-        std::cout << "Under $1,000: "    << under1000          << " guitars" << std::endl;
-        std::cout << "$1,000 - $2,000: " << between1000and2000 << " guitars" << std::endl;
-        std::cout << "$2,000 - $3,000: " << between2000and3000 << " guitars" << std::endl;
-        std::cout << "$3,000 - $4,000: " << between3000and4000 << " guitars" << std::endl;
-        std::cout << "Over $4,000: "     << over4000           << " guitars" << std::endl;
+        std::cout << " Under $1,000: "    << under1000          << " guitars" << std::endl;
+        std::cout << " $1,000 - $2,000: " << between1000and2000 << " guitars" << std::endl;
+        std::cout << " $2,000 - $3,000: " << between2000and3000 << " guitars" << std::endl;
+        std::cout << " $3,000 - $4,000: " << between3000and4000 << " guitars" << std::endl;
+        std::cout << " Over $4,000: "     << over4000           << " guitars" << std::endl;
 
     } // end countByPricesRanges()
 
@@ -352,10 +353,13 @@ public:
 
             switch (column)
             {
-                case 0: guitar.title = cell;
+                case 0: guitar.searchTerm = cell;    // model_category
                         break;
                 
-                case 1: try
+                case 1: guitar.title = cell;         // title
+                        break;
+                
+                case 2: try                          // price
                         {
                             guitar.price = std::stod(cell);
                         }
@@ -365,20 +369,19 @@ public:
                         }
                         break;
 
-                case 2: guitar.url = cell;
+                case 3: // price_raw - skip
                         break;
 
-                case 3: guitar.condition = cell;
+                case 4: guitar.url = cell;           // url
                         break;
 
-                case 4: guitar.year = cell;
+                case 5: guitar.year = cell;          // year
                         break;
 
-                case 5: guitar.searchTerm = cell;
+                case 6: guitar.scrapedAt = cell;     // scraped_at
                         break;
 
-                case 6: guitar.scrapedAt = cell;
-                        break;
+                // Skip scrape_date and scrape_time columns 7 & 8
             } // end switch(column)
             column++;
         }
